@@ -3,3 +3,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 // import all styles from other files to this one.
+.container {
+  border: 1px solid blue;
+  background-color: green;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.col-xs-4 {
+  background-color: yellow;
+  height: 132px;
+}
+
+header {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  background-color: red;
+}
