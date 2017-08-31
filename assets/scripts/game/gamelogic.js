@@ -17,19 +17,46 @@ const playerMove = function (index) {
   }
 }
 
-module.exports = {
-  playerMove
+const checkWinner = function (gameArray) {
+  if ((gameArray[0] === 'x' && gameArray[1] === 'x' && gameArray[2] === 'x') ||
+  (gameArray[3] === 'x' && gameArray[4] === 'x' && gameArray[5] === 'x') ||
+  (gameArray[6] === 'x' && gameArray[7] === 'x' && gameArray[8] === 'x') ||
+  (gameArray[0] === 'x' && gameArray[3] === 'x' && gameArray[6] === 'x') ||
+  (gameArray[1] === 'x' && gameArray[4] === 'x' && gameArray[7] === 'x') ||
+  (gameArray[2] === 'x' && gameArray[5] === 'x' && gameArray[8] === 'x') ||
+  (gameArray[0] === 'x' && gameArray[4] === 'x' && gameArray[8] === 'x') ||
+  (gameArray[2] === 'x' && gameArray[4] === 'x' && gameArray[6] === 'x')) {
+    console.log('X is the winner!')
+    $('.gameboard').off()
+  } else if ((gameArray[0] === 'o' && gameArray[1] === 'o' && gameArray[2] === 'o') ||
+  (gameArray[3] === 'o' && gameArray[4] === 'o' && gameArray[5] === 'o') ||
+  (gameArray[6] === 'o' && gameArray[7] === 'o' && gameArray[8] === 'o') ||
+  (gameArray[0] === 'o' && gameArray[3] === 'o' && gameArray[6] === 'o') ||
+  (gameArray[1] === 'o' && gameArray[4] === 'o' && gameArray[7] === 'o') ||
+  (gameArray[2] === 'o' && gameArray[5] === 'o' && gameArray[8] === 'o') ||
+  (gameArray[0] === 'o' && gameArray[4] === 'o' && gameArray[8] === 'o') ||
+  (gameArray[2] === 'o' && gameArray[4] === 'o' && gameArray[6] === 'o')) {
+    console.log('O is the winner!')
+    $('.gameboard').off()
+  }
 }
 
-/*
-Winning combinations for arrays:
+// EXPERIMENTAL SECTION
+// NOT WORKING YET
 
-[0,1,2]
-[3,4,5]
-[6,7,8]
-[0,3,6]
-[1,4,7]
-[2,5,8]
-[0,4,8]
-[2,4,6]
-*/
+// const isIncluded = function (element) {
+//   return playerArray.includes(element)
+// }
+//
+// const checkWinner2 = function (array) {
+//   return array.every(isIncluded)
+// }
+//
+// const checkWinners = function (winnersArray) {
+//   return winnersArray.some(checkWinner2)
+// }
+
+module.exports = {
+  playerMove,
+  checkWinner
+}
