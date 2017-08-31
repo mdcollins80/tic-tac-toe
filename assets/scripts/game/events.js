@@ -1,17 +1,17 @@
 'use strict'
 
 const stores = require('../store')
+const gamelogic = require('./gamelogic')
 
-const playerMove = function (event) {
+const click = function (event) {
   event.preventDefault()
   // get the id of the square that was clicked for updating the array
   const move = $(this).attr('id')
-  $(this).text('X')
-  // increasee click accumulator stored in the Store file
-  stores.clickCounter += 1
-  // edit the gameArray with an 'x'.  Need to update for switching between
-  // x and o.
-  stores.gameArray[move] = 'x'
+  // updates gameArray with X or O depending on turn
+  gamelogic.playerMove(move)
+  // checks turn, inserts X or O accordingly
+  $(this).text(() => stores.turn() === 1 ? 'X' : 'O')
+  // bunch of console logs to check my work.
   console.log('X click count = ' + stores.clickCounter)
   console.log(stores.gameArray)
   console.log('The id is: ' + $(this).attr('id'))
@@ -20,7 +20,5 @@ const playerMove = function (event) {
 }
 
 module.exports = {
-  playerMove // export to index.js
+  click // export to index.js
 }
-
-// expand the topLeft function to each of the squares?

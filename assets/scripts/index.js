@@ -6,7 +6,7 @@ const events = require('./game/events')
 
 $(() => {
   setAPIOrigin(location, config)
-  $('.gameboard').on('click', events.playerMove)
+  $('.gameboard').on('click', events.click)
 })
 
 // use require with a reference to bundle the file and use it in this file

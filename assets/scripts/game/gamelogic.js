@@ -1,28 +1,24 @@
 'use strict'
 
-const gameArray = [null, null, null, null, null, null, null, null, null]
+const stores = require('../store')
 
-const click = function (player, index) {
-  if (player === 'x') {
-    if (gameArray[index] !== null) {
-      return 'box already used'
-    } else {
-      gameArray[index] = 'x'
-      return gameArray
-    }
+const playerMove = function (index) {
+  if (stores.gameArray[index] !== null) {
+    console.log('Box already used!')
   } else {
-    if (gameArray[index] !== null) {
-      return 'box already used'
+    stores.clickCounter += 1
+    if (stores.turn() === 1) {
+      stores.gameArray[index] = 'x'
+      return stores.gameArray // for passing to the GameAPI later?
     } else {
-      gameArray[index] = 'o'
-      return gameArray
+      stores.gameArray[index] = 'o'
+      return stores.gameArray // for passing to the GameAPI later?
     }
   }
 }
 
-module.export = {
-  gameArray,
-  click
+module.exports = {
+  playerMove
 }
 
 /*
