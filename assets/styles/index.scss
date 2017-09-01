@@ -3,9 +3,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 // import all styles from other files to this one.
+header {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  background-color: red;
+  height: 50px;
+}
+
 .container {
   border: 1px solid blue;
   background-color: green;
+  margin-bottom: 20px;
 }
 
 .box {
@@ -17,10 +25,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 132px;
 }
 
-header {
-  margin-bottom: 20px;
-  border: 1px solid black;
-  background-color: red;
+.col-xs-3 {
+  //background-color: pink;
+  height: 100%;
+}
+
+.row {
+  height: 100%;
+  border: 1px solid aqua;
+}
+
+.container .post-game {
+  margin: 20px 0;
 }
 
 .gameboard {
@@ -28,4 +44,21 @@ header {
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
+}
+
+.gameboard-all {
+  margin-bottom: 20px;
+}
+
+.form {
+  height: 50px;
+}
+
+.sign-up {
+  height: 50px;
+}
+
+.form-container {
+  background-color: brown;
+  margin-bottom: 20px;
 }

@@ -12,11 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid box">
-    <header class="col-xs-12">
-        <h1>Tic-Tac-Toe!</h1>
-    </header>
+      <header class="container">
+        <div class="row">
+          <div class="col-xs-3 box">Tic-Tac-Toe!</div>
+          <div class="col-xs-3 box">Sign Up</div>
+          <div class="col-xs-3 box">Sign In</div>
+          <div class="col-xs-3 box">
+            <form id="user-sign-out">
+              <button type="submit" class="btn btn-danger">Sign Out</button>
+            </form>
+          </div>
+        </div>
+      </header>
+      <div class="message-bar" id="message"></div>
+      <div class="container form-container box">
+        <div class="row sign-up">
+          <form class="credentials" id="user-sign-up">
+            <div class="form-group">
+              <input type="text" name="credentials[email]" id="user-email-sign-up" placeholder="Email">
+              <input type="password" name="credentials[password]" id="user-password-sign-up" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" id="user-password-conf-sign-up" placeholder="Password Confirm">
+              <button type="submit" class="btn btn-default">Sign Up</button>
+            </div>
+          </form>
+        </div>
 
-      <div class="container">
+        <div class="row sign-in">
+          <form class="credentials" id="user-sign-in">
+            <div class="col-xs-12 form-group">
+              <input type="text" name="credentials[email]" id="user-email-sign-in" placeholder="Email">
+              <input type="text" name="credentials[password]" id="user-password-sign-in" placeholder="Password">
+              <button type="submit" class="btn btn-default">Sign In</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="row change-password">
+          <form class="credentials" id="user-change-password">
+            <div class="col-xs-12 form-group">
+              <input type="password" name="passwords[old]" id="password-old-change" placeholder="Old Password">
+              <input type="password" name="passwords[new]" id="password-new-change" placeholder="New Password">
+              <input type="password" name="passwords[newConfirm]" id="password-new-confirm" placeholder="Confirm New Password">
+              <button type="submit" class="btn btn-default">Change Password</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="container gameboard-all">
         <div class="row">
           <div class="col-xs-4 box gameboard" id=0></div>
           <div class="col-xs-4 box gameboard" id=1></div>
@@ -34,7 +78,24 @@
         </div>
       </div>
 
+      <div class="container post-game">
+        <div class="row post-game">
+          <div class="col-xs-6 col-s-3 box">
+            <button type="button" class="btn btn-outline-primary reset">New Game</button>
+          </div>
+          <div class="col-xs-6 col-s-3 box">
+            <button type="button" class="btn btn-outline-primary">Quit Game</button>
+          </div>
+          <div class="col-xs-6 col-s-3 box">
+            <button type="button" class="btn btn-outline-primary">Your</button>
+          </div>
+          <div class="col-xs-6 col-s-3 box">
+            <button type="button" class="btn btn-outline-primary">Mom</button>
+          </div>
+        </div>
+      </div>
 
       <p>Here is some text about Tic Tac Toe.</p>
+
     </body>
 </html>
