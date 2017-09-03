@@ -1,18 +1,18 @@
 'use strict'
 
-const stores = require('../store')
+const store = require('../store')
 
 const playerMove = function (index) {
-  if (stores.gameArray[index] !== null) {
+  if (store.gameArray[index] !== null) {
     console.log('Box already used!')
   } else {
-    stores.clickCounter += 1
-    if (stores.turn() === 1) {
-      stores.gameArray[index] = 'x'
-      // return stores.gameArray // for passing to the GameAPI later?
+    store.clickCounter += 1
+    if (store.turn() === 1) {
+      store.gameArray[index] = 'x'
+      // return store.gameArray // for passing to the GameAPI later?
     } else {
-      stores.gameArray[index] = 'o'
-      // return stores.gameArray // for passing to the GameAPI later?
+      store.gameArray[index] = 'o'
+      // return store.gameArray // for passing to the GameAPI later?
     }
   }
 }
@@ -28,6 +28,8 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'x' && gameArray[4] === 'x' && gameArray[6] === 'x')) {
     $('.gameboard').off()
     console.log('X is the winner!')
+    alert('X is the winner!')
+    return true
   } else if ((gameArray[0] === 'o' && gameArray[1] === 'o' && gameArray[2] === 'o') ||
   (gameArray[3] === 'o' && gameArray[4] === 'o' && gameArray[5] === 'o') ||
   (gameArray[6] === 'o' && gameArray[7] === 'o' && gameArray[8] === 'o') ||
@@ -38,6 +40,10 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'o' && gameArray[4] === 'o' && gameArray[6] === 'o')) {
     $('.gameboard').off()
     console.log('O is the winner!')
+    alert('O is the winner!')
+    return true
+  } else {
+    return false
   }
 }
 

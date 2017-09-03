@@ -3,10 +3,10 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (data) {
-  console.log('You successfully signed up!')
+  console.log('You successfully signed up bro!')
   store.user = data.user
   console.log(store.user)
-  $('#message').text('Successfully signed up!')
+  $('#message').text('Successfully signed up bro!')
 }
 
 const onSignUpFailure = function (error) {

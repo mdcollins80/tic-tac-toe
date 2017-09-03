@@ -14,9 +14,22 @@
     <body class="container-fluid box">
       <header class="container">
         <div class="row">
-          <div class="col-xs-3 box">Tic-Tac-Toe!</div>
-          <div class="col-xs-3 box">Sign Up</div>
-          <div class="col-xs-3 box">Sign In</div>
+          <div class="col-xs-3 box">
+            <form id="new-game">
+              <button type="submit" class="btn btn-secondary">New Game</button>
+            </form>
+          </div>
+          <div class="col-xs-3 box">
+            <form id="get-game">
+              <input type="text" name="game[id]" id="get-game-id" placeholder="Game ID">
+              <button type="submit" class="btn btn-success">Get Game</button>
+            </form>
+          </div>
+          <div class="col-xs-3 box">
+            <form id="get-games">
+              <button type="submit" class="btn btn-primary">Get Games</button>
+            </form>
+          </div>
           <div class="col-xs-3 box">
             <form id="user-sign-out">
               <button type="submit" class="btn btn-danger">Sign Out</button>
@@ -24,11 +37,13 @@
           </div>
         </div>
       </header>
+
       <div class="message-bar" id="message"></div>
+
       <div class="container form-container box">
         <div class="row sign-up">
           <form class="credentials" id="user-sign-up">
-            <div class="form-group">
+            <div class="col-xs-12 form-group">
               <input type="text" name="credentials[email]" id="user-email-sign-up" placeholder="Email">
               <input type="password" name="credentials[password]" id="user-password-sign-up" placeholder="Password">
               <input type="password" name="credentials[password_confirmation]" id="user-password-conf-sign-up" placeholder="Password Confirm">
@@ -81,16 +96,18 @@
       <div class="container post-game">
         <div class="row post-game">
           <div class="col-xs-6 col-s-3 box">
-            <button type="button" class="btn btn-outline-primary reset">New Game</button>
+            <button type="button" class="btn btn-primary reset">New Game</button>
           </div>
           <div class="col-xs-6 col-s-3 box">
-            <button type="button" class="btn btn-outline-primary">Quit Game</button>
+            <form id="join-game">
+              <button type="submit" class="btn btn-primary">Join Game</button>
+            </form>
           </div>
           <div class="col-xs-6 col-s-3 box">
-            <button type="button" class="btn btn-outline-primary">Your</button>
+            <button type="button" class="btn btn-primary">Your</button>
           </div>
           <div class="col-xs-6 col-s-3 box">
-            <button type="button" class="btn btn-outline-primary">Mom</button>
+            <button type="button" class="btn btn-primary">Mom</button>
           </div>
         </div>
       </div>

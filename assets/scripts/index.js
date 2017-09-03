@@ -13,6 +13,11 @@ $(() => {
   $('#user-sign-in').on('submit', authEvents.onSignIn)
   $('#user-change-password').on('submit', authEvents.onChangePassword)
   $('#user-sign-out').on('submit', authEvents.onSignOut)
+  // Game API Event Listeners
+  $('#get-games').on('submit', gameEvents.onGetGames)
+  $('#new-game').on('submit', gameEvents.onNewGame)
+  $('#get-game').on('submit', gameEvents.onGetGame)
+  // $('.gameboard').on('click', gameEvents.onNewMove)
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -17,10 +17,10 @@ const onSignUp = function (event) {
         .then(userUi.onSignUpSuccess)
         .catch(userUi.onSignUpFailure)
     } else {
-      console.log('Passwords don\'t match!')
+      console.log('Passwords don\'t match bro!')
     }
   } else {
-    console.log('Please enter an email!')
+    console.log('Please enter an email bro!')
   }
 }
 

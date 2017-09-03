@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import './colors'
 
 
 // import all styles from other files to this one.
@@ -32,6 +33,8 @@ header {
 
 .row {
   height: 100%;
+  width: 280px;
+  margin: 0 auto;
   border: 1px solid aqua;
 }
 
@@ -44,6 +47,8 @@ header {
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
+  height: 90px;
+  width: 90px;
 }
 
 .gameboard-all {
@@ -61,4 +66,8 @@ header {
 .form-container {
   background-color: brown;
   margin-bottom: 20px;
+}
+
+.message-bar {
+  background-color: $faded-navy
 }
