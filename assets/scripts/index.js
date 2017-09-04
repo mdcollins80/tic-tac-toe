@@ -15,7 +15,7 @@ $(() => {
   $('#user-sign-out').on('submit', authEvents.onSignOut)
   // Game API Event Listeners
   $('#get-games').on('submit', gameEvents.onGetGames)
-  $('#new-game').on('submit', gameEvents.onNewGame)
+  $('#new-game').on('click', gameEvents.onNewGame)
   $('#get-game').on('submit', gameEvents.onGetGame)
   // $('.gameboard').on('click', gameEvents.onNewMove)
 })

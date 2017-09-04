@@ -1,7 +1,7 @@
 #!/bin/bash
 # EMAIL='Farts' PASSWORD='123' PASSWORD_CONFIRMATION='123' sh scripts/credentials/sign-up.sh
 
-curl --include --request POST "http://tic-tac-toe.wdibos.com/sign-up" \
+curl --include --request POST "http://tic-tac-toe.wdibos.com/sign-in" \
   --header "Content-type: application/json" \
   --data '{
     "credentials": {

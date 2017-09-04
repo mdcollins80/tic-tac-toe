@@ -13,7 +13,7 @@ const click = function (event) {
   // updates gameArray with X or O depending on turn
   gamelogic.playerMove(move)
   // checks turn, inserts X or O accordingly
-  const turn = () => store.turn() === 1 ? 'x' : 'o'
+  const turn = () => store.turn() === 1 ? 'X' : 'O'
   $(this).text(turn)
   console.log(store.gameArray)
   // check for winner
@@ -52,6 +52,7 @@ const onGetGames = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
+  console.log('new game bro!')
   gameApi.newGame()
     .then(gameUi.onNewGameSuccess)
     .catch(gameUi.onNewGameFailure)

@@ -34,6 +34,7 @@ const getGame = function (data) {
 }
 
 const updateGame = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigins.development + '/games/' + store.game.id,
     method: 'PATCH',

@@ -1,24 +1,34 @@
 'use strict'
 
 const store = require('../store')
+const userApi = require('./api')
 
 const onSignUpSuccess = function (data) {
+  console.log(data)
   console.log('You successfully signed up bro!')
   store.user = data.user
   console.log(store.user)
-  $('#message').text('Successfully signed up bro!')
+  userApi.signIn(JSON.stringify(store.user))
+    .then(onSignInSuccess)
+    .catch(onSignInFailure)
+
+  $('#message').text('You\'re signed up and signed in bro!')
+  $('main').removeClass('hidden')
+  $('#landing').addClass('hidden')
 }
 
 const onSignUpFailure = function (error) {
   console.log(error)
-  $('#message').text('There was a problem!')
+  $('#message').text('Sign-up problems bro!')
 }
 
 const onSignInSuccess = function (data) {
   console.log('You successfully signed in!')
   store.user = data.user
   console.log(store.user)
-  $('#message').text('Successfully signed in!')
+  $('#message').text('Nice sign-in bro!')
+  $('main').removeClass('hidden')
+  $('#landing').addClass('hidden')
 }
 
 const onSignInFailure = function (error) {

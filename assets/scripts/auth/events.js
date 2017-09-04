@@ -12,15 +12,16 @@ const onSignUp = function (event) {
 
   if (user.email.length !== 0) {
     if (user.password === user.password_confirmation) {
-      console.log('It works man!')
+      console.log('sign up data is good')
       userApi.signUp(data)
+      // userApi.signIn(data) // added this line to sign in immediately upon sign up.
         .then(userUi.onSignUpSuccess)
         .catch(userUi.onSignUpFailure)
     } else {
-      console.log('Passwords don\'t match bro!')
+      $('#message').text('Passwords don\'t match bro!')
     }
   } else {
-    console.log('Please enter an email bro!')
+    $('#message').text('Enter an email bro!')
   }
 }
 

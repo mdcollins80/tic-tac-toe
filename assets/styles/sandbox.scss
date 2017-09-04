@@ -1,0 +1,128 @@
+html, body {
+  background-color: $punch;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header {
+  background-color: red;
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.nav {
+  height: 50px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+form {
+  padding: 8.5px;
+}
+
+.container {
+  // border: 1px solid green;
+  margin-bottom: 20px;
+  // height: 100%;
+}
+
+.jumbotron {
+  background-color: $ocean-breeze;
+  text-align: center;
+  font-family: 'Comic Sans MS';
+  margin-top: 20px;
+}
+.landing {
+  background-color: $ocean-breeze;
+  margin: 10px auto;
+  max-width: 300px;
+}
+
+.credentials {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.form-group {
+  max-width: 250px;
+}
+
+input {
+  padding: 5px 0;
+  margin: 3px 0;
+}
+
+main {
+  background-color: $ocean-breeze;
+  padding: 20px;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.col-xs-4 {
+  background-color: yellow;
+  height: 132px;
+}
+
+.col-xs-3 {
+  //background-color: pink;
+  height: 100%;
+}
+
+// .row {
+//   border: 1px solid aqua;
+//   margin: 0 auto;
+// }
+
+.container .post-game {
+  margin: 20px 0;
+}
+
+.gameboard-all {
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  // padding: 0;
+  border: 3px solid black;
+}
+
+.gameboard {
+  font-size: 100px;
+  font-weight: bold;
+  height: 100%;
+  // line-height: 200px;
+  text-align: center;
+  // width: 90px;
+  padding: 15px 0;
+}
+
+.row {
+  width: 100%;
+  height: (1/3) * 100%;
+  margin: 0;
+}
+
+.form {
+  height: 50px;
+}
+
+.sign-up {
+  height: 50px;
+}
+
+.message-bar {
+  background-color: $faded-navy;
+  color: $white;
+  font-family: 'Comic Sans MS';
+  height: 40px;
+  // margin-bottom: 20px;
+  padding: 10px 0;
+  text-align: center;
+}
