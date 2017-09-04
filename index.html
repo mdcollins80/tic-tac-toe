@@ -11,48 +11,25 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid box">
-      <!-- This is the navbar section
-      <header class="container-fluid">
-        <div class="row">
-          <div class="col-xs-6 col-md-3 nav box">
-            <form id="new-game">
-              <button type="submit" class="btn btn-secondary">New Game</button>
-            </form>
-          </div>
-          <div class="col-xs-6 col-md-3 nav box">
-            <form id="get-game">
-              <input type="text" name="game[id]" id="get-game-id" placeholder="Game ID" size=5>
-              <button type="submit" class="btn btn-success">Get Game</button>
-            </form>
-          </div>
-          <div class="col-xs-6 col-md-3 nav box">
-            <form id="get-games">
-              <button type="submit" class="btn btn-primary">Get Games</button>
-            </form>
-          </div>
-          <div class="col-xs-6 col-md-3 nav box">
-            <form id="user-sign-out">
-              <button type="submit" class="btn btn-danger">Sign Out</button>
-            </form>
-          </div>
-        </div>
-      </header> -->
+    <body class="container-fluid">
       <header class="hidden">
         <h1>TIC-TAC-BRO!</h1>
       </header>
       <nav class="container-fluid hidden">
         <div class="row">
-          <div class="col box" id="new-game-btn">
+          <div class="col-3 box" id="new-game-btn">
             <button type="button" class="btn btn-primary">New Game</button>
           </div>
-          <div class="col box" id="get-game-btn">
-            <button type="button" class="btn btn-primary">Get Game</button>
+          <div class="col-3 box">
+            <form id="get-game-btn">
+              <button type="submit" class="btn btn-primary">Get Game</button>
+              <input type="text" name="game[id]" placeholder="Game ID">
+            </form>
           </div>
-          <div class="col box" id="join-game-btn">
+          <div class="col-3 box" id="join-game-btn">
             <button type="button" class="btn btn-primary">Join Game</button>
           </div>
-          <div class="col box" id="sign-out-btn">
+          <div class="col-3 box" id="sign-out-btn">
             <button type="button" class="btn btn-primary">Sign Out</button>
           </div>
         </div>
@@ -112,27 +89,6 @@
             <div class="col-xs-4 box gameboard" id=6>6</div>
             <div class="col-xs-4 box gameboard" id=7>7</div>
             <div class="col-xs-4 box gameboard" id=8>8</div>
-          </div>
-        </div>
-
-        <div class="container post-game">
-          <div class="row post-game">
-            <div class="col-xs-6 col-s-3 col-md-3 box">
-              <form id="new-game">
-                <button type="submit" class="btn btn-primary reset">New Game</button>
-              </form>
-            </div>
-            <div class="col-xs-6 col-s-3 col-md-3 box">
-              <form id="join-game">
-                <button type="submit" class="btn btn-primary">Join Game</button>
-              </form>
-            </div>
-            <div class="col-xs-6 col-s-3 col-md-3 box">
-              <button type="button" class="btn btn-primary">Your</button>
-            </div>
-            <div class="col-xs-6 col-s-3 col-md-3 box">
-              <button type="button" class="btn btn-primary">Mom</button>
-            </div>
           </div>
         </div>
 

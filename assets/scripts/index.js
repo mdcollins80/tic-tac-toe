@@ -12,11 +12,12 @@ $(() => {
   $('#user-sign-up').on('submit', authEvents.onSignUp)
   $('#user-sign-in').on('submit', authEvents.onSignIn)
   $('#user-change-password').on('submit', authEvents.onChangePassword)
-  $('#user-sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out-btn').on('click', authEvents.onSignOut)
   // Game API Event Listeners
   $('#get-games').on('submit', gameEvents.onGetGames)
-  $('#new-game').on('click', gameEvents.onNewGame)
-  $('#get-game').on('submit', gameEvents.onGetGame)
+  $('#new-game-btn').on('click', gameEvents.onNewGame)
+  $('#new-game-btn').on('click', gameEvents.boardReset)
+  $('#get-game-btn').on('submit', gameEvents.onGetGame)
   // $('.gameboard').on('click', gameEvents.onNewMove)
 })
 

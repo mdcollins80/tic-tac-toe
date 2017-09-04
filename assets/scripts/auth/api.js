@@ -12,6 +12,8 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
+  console.log('data: ')
+  console.log(data)
   return $.ajax({
     url: config.apiOrigins.development + '/sign-in',
     method: 'POST',

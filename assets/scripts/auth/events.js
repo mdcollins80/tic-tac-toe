@@ -14,9 +14,11 @@ const onSignUp = function (event) {
     if (user.password === user.password_confirmation) {
       console.log('sign up data is good')
       userApi.signUp(data)
-      // userApi.signIn(data) // added this line to sign in immediately upon sign up.
         .then(userUi.onSignUpSuccess)
         .catch(userUi.onSignUpFailure)
+      // userApi.signIn(data)
+      //   .then(userUi.onSignInSuccess)
+      //   .catch(userUi.onSignInFailure)
     } else {
       $('#message').text('Passwords don\'t match bro!')
     }
