@@ -26,8 +26,9 @@ const onSignInSuccess = function (data) {
   console.log('You successfully signed in!')
   store.user = data.user
   console.log(store.user)
-  $('#message').text('Nice sign-in bro!')
+  $('#message').text('Nice sign-in bro!').hide(3000)
   $('main').removeClass('hidden')
+  $('header').removeClass('hidden')
   $('#landing').addClass('hidden')
 }
 

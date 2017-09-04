@@ -38,8 +38,30 @@
           </div>
         </div>
       </header> -->
+      <header class="hidden">
+        <h1>TIC-TAC-BRO!</h1>
+      </header>
+      <nav class="container-fluid hidden">
+        <div class="row">
+          <div class="col box" id="new-game-btn">
+            <button type="button" class="btn btn-primary">New Game</button>
+          </div>
+          <div class="col box" id="get-game-btn">
+            <button type="button" class="btn btn-primary">Get Game</button>
+          </div>
+          <div class="col box" id="join-game-btn">
+            <button type="button" class="btn btn-primary">Join Game</button>
+          </div>
+          <div class="col box" id="sign-out-btn">
+            <button type="button" class="btn btn-primary">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+
       <!-- This is the message bar -->
-      <div class="message-bar box" id="message"></div>
+      <div class="message-bar box" id="message-bar">
+        <span id="message"></span>
+      </div>
       <!-- This is the sign-up and sign-in section -->
       <div class="container credentials-all" id="landing">
         <div class="logo">

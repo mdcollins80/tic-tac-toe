@@ -45,7 +45,6 @@ const onUpdateGameSuccess = function (data) {
   console.log('Updated the game bro!')
   console.log(data)
   store.game = data.game
-  $('#message').text('Updated the game bro!')
 }
 
 const onUpdateGameFailure = function (error) {

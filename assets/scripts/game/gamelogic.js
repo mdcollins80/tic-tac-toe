@@ -28,7 +28,7 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'x' && gameArray[4] === 'x' && gameArray[6] === 'x')) {
     $('.gameboard').off()
     console.log('X is the winner!')
-    alert('X is the winner!')
+    $('#message').show().text('X wins the game bro!').hide(5000)
     return true
   } else if ((gameArray[0] === 'o' && gameArray[1] === 'o' && gameArray[2] === 'o') ||
   (gameArray[3] === 'o' && gameArray[4] === 'o' && gameArray[5] === 'o') ||
@@ -40,7 +40,10 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'o' && gameArray[4] === 'o' && gameArray[6] === 'o')) {
     $('.gameboard').off()
     console.log('O is the winner!')
-    alert('O is the winner!')
+    $('#message').show().text('O wins the game bro!').hide(5000)
+    return true
+  } else if (store.clickCounter === 9) {
+    $('#message').show().text('It\'s a DRAW bro!').hide(5000)
     return true
   } else {
     return false
