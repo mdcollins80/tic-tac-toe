@@ -38,6 +38,7 @@ const boardReset = function () {
     store.gameArray[i] = null
   }
   store.clickCounter = 0
+  console.log('ran boardReset, clickCounter is at: ' + store.clickCounter)
   $('.gameboard').text('')
   $('.gameboard').on('click', click)
 }
@@ -51,7 +52,6 @@ const onGetGames = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  console.log('new game bro!')
   gameApi.newGame()
     .then(gameUi.onNewGameSuccess)
     .catch(gameUi.onNewGameFailure)

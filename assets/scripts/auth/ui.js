@@ -2,6 +2,8 @@
 
 const store = require('../store')
 const gameEvents = require('../game/events')
+const gameApi = require('../game/api')
+const gameUi = require('../game/ui')
 
 const onSignUpSuccess = function (data) {
   console.log(data)
@@ -21,16 +23,20 @@ const onSignUpFailure = function (error) {
 }
 
 const onSignInSuccess = function (data) {
-  console.log('You successfully signed in!')
   store.user = data.user
+  console.log('next line is data.user:')
+  console.log(data.user)
   console.log(store.user)
-  console.log(store)
   $('#message').text('Nice sign-in bro!').fadeOut(5000)
   $('main').removeClass('hidden')
   $('header').removeClass('hidden')
   $('nav').removeClass('hidden')
   $('#landing').addClass('hidden')
-  $('.gameboard').off()
+
+  // show the statistics
+  gameApi.getGames()
+    .then(gameUi.onGetGamesSuccess)
+    .catch(gameUi.onGetGamesFailure)
 }
 
 const onSignInFailure = function (error) {

@@ -1,12 +1,14 @@
 'use strict'
 
 const store = require('../store')
+const gameEvents = require('./events')
 
 const onGetGamesSuccess = function (data) {
   console.log('You got your games bro!')
-  console.log(data)
+  console.log(data.games.length)
+  $('#stats-total').text(data.games.length)
   $('#message').show().text('You got your games bro!').fadeOut(5000)
-  $('.gameboard').on()
+  $('.gameboard').on('click', gameEvents.click)
 }
 
 const onGetGamesFailure = function () {
@@ -15,9 +17,10 @@ const onGetGamesFailure = function () {
 }
 
 const onNewGameSuccess = function (data) {
+  console.log('new game success ran')
   store.game = data.game
   $('#message').show().text('Made a new game bro! ID: ' + data.game.id)
-  $('.gameboard').on()
+  $('.gameboard').on('click', gameEvents.click)
 }
 
 const onNewGameFailure = function (error) {
@@ -27,14 +30,18 @@ const onNewGameFailure = function (error) {
 }
 
 const onGetGameSuccess = function (data) {
-  console.log('Retrieved a game bro!')
-  console.log(data)
+  $('.gameboard').on('click', gameEvents.click)
   store.game = data.game
   store.gameArray = data.game
-  for (let i = 0; i < )
-  console.log(store.game)
+  for (let i = 0; i < store.game.cells.length; i++) {
+    $('#' + i).text(store.game.cells[i])
+  }
+  const clicks = store.game.cells.filter(function (item) {
+    return item !== ''
+  })
+  store.clickCounter = clicks.length
+  console.log('click counter is at: ' + store.clickCounter)
   $('#message').show().text('Retrieved a game bro!').fadeOut(5000)
-  $('.gameboard').on()
 }
 
 const onGetGameFailure = function (error) {
@@ -44,7 +51,8 @@ const onGetGameFailure = function (error) {
 }
 
 const onUpdateGameSuccess = function (data) {
-  console.log('Updated the game bro!')
+  console.log('clickCounter is at: ' + store.clickCounter)
+  console.log('turn mod is at: ' + store.turn())
   console.log(data)
   store.game = data.game
 }
