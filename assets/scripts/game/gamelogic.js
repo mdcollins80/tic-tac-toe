@@ -26,9 +26,8 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'x' && gameArray[5] === 'x' && gameArray[8] === 'x') ||
   (gameArray[0] === 'x' && gameArray[4] === 'x' && gameArray[8] === 'x') ||
   (gameArray[2] === 'x' && gameArray[4] === 'x' && gameArray[6] === 'x')) {
-    $('.gameboard').off()
-    console.log('X is the winner!')
-    $('#message').show().text('X wins the game bro!').fadeOut(5000)
+    store.board = 'off'
+    $('#message').show().text('X wins the game bro!').fadeOut(10000)
     return true
   } else if ((gameArray[0] === 'o' && gameArray[1] === 'o' && gameArray[2] === 'o') ||
   (gameArray[3] === 'o' && gameArray[4] === 'o' && gameArray[5] === 'o') ||
@@ -38,12 +37,12 @@ const checkWinner = function (gameArray) {
   (gameArray[2] === 'o' && gameArray[5] === 'o' && gameArray[8] === 'o') ||
   (gameArray[0] === 'o' && gameArray[4] === 'o' && gameArray[8] === 'o') ||
   (gameArray[2] === 'o' && gameArray[4] === 'o' && gameArray[6] === 'o')) {
-    $('.gameboard').off()
-    console.log('O is the winner!')
-    $('#message').show().text('O wins the game bro!').fadeOut(5000)
+    store.board = 'off'
+    $('#message').show().text('O wins the game bro!').fadeOut(10000)
     return true
   } else if (store.clickCounter === 9) {
-    $('#message').show().text('It\'s a DRAW bro!').fadeOut(5000)
+    store.board = 'off'
+    $('#message').show().text('It\'s a DRAW bro!').fadeOut(10000)
     return true
   } else {
     return false

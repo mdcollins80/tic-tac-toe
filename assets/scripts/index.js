@@ -7,10 +7,9 @@ const authEvents = require('./auth/events')
 
 $(() => {
   setAPIOrigin(location, config)
-  // $('.gameboard').on('click', gameEvents.click)
+  $('.gameboard').on('click', gameEvents.click)
   $('#user-sign-up').on('submit', authEvents.onSignUp)
   $('#user-sign-in').on('submit', authEvents.onSignIn)
-  $('#user-sign-in').on('submit', gameEvents.onGetGames).delay(2000)
   $('#change-pw').on('click', function (event) {
     console.log('password change clicked')
     $('#user-change-pw').removeClass('hidden')
@@ -19,7 +18,7 @@ $(() => {
   $('#sign-out-btn').on('click', authEvents.onSignOut)
   // Game API Event Listeners
   $('#new-game-btn').on('click', gameEvents.onNewGame)
-  $('#new-game-btn').on('click', gameEvents.boardReset)
+  // $('#new-game-btn').on('click', gameEvents.boardReset)
   $('#get-game-btn').on('submit', gameEvents.onGetGame)
   // $('.gameboard').on('click', gameEvents.onNewMove)
 })

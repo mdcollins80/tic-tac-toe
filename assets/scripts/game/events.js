@@ -7,47 +7,31 @@ const gameUi = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const click = function (event) {
-  event.preventDefault()
-  const move = $(this).attr('id')
-  // updates gameArray with X or O depending on turn
-  gamelogic.playerMove(move)
-  // checks turn, inserts X or O accordingly
-  const turn = () => store.turn() === 1 ? 'X' : 'O'
-  $(this).text(turn)
-  console.log(store.gameArray)
-  // check for winner
-  const over = gamelogic.checkWinner(store.gameArray)
-  // send data to the updateGame API call
-  const data = {
-    game: {
-      cell: {
-        index: move,
-        value: turn()
-      },
-      over: over
+  if (store.board === 'on') {
+    event.preventDefault()
+    const move = $(this).attr('id')
+    // updates gameArray with X or O depending on turn
+    gamelogic.playerMove(move)
+    // checks turn, inserts X or O accordingly
+    const turn = () => store.turn() === 1 ? 'X' : 'O'
+    $(this).text(turn)
+    console.log(store.gameArray)
+    // check for winner
+    const over = gamelogic.checkWinner(store.gameArray)
+    // send data to the updateGame API call
+    const data = {
+      game: {
+        cell: {
+          index: move,
+          value: turn()
+        },
+        over: over
+      }
     }
-  }
-  gameApi.updateGame(JSON.stringify(data))
-    .then(gameUi.onUpdateGameSuccess)
-    .catch(gameUi.onUpdateGameFailure)
-}
-
-const boardReset = function () {
-  // event.preventDefault()
-  for (let i = 0; i < store.gameArray.length; i++) {
-    store.gameArray[i] = null
-  }
-  store.clickCounter = 0
-  console.log('ran boardReset, clickCounter is at: ' + store.clickCounter)
-  $('.gameboard').text('')
-  $('.gameboard').on('click', click)
-}
-
-const onGetGames = function (event) {
-  event.preventDefault()
-  gameApi.getGames()
-    .then(gameUi.onGetGamesSuccess)
-    .catch(gameUi.onGetGamesFailure)
+    gameApi.updateGame(JSON.stringify(data))
+      .then(gameUi.onUpdateGameSuccess)
+      .catch(gameUi.onUpdateGameFailure)
+  } console.log(store.clickCounter)
 }
 
 const onNewGame = function (event) {
@@ -65,10 +49,23 @@ const onGetGame = function (event) {
     .catch(gameUi.onGetGameFailure)
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  gameApi.getGames()
+    .then(gameUi.onGetGamesSuccess)
+    .catch(gameUi.onGetGamesFailure)
+}
+
+const onGetFinishedGames = function (event) {
+  event.preventDefault()
+  gameApi.getFinishedGames()
+    .then(gameUi.onGetFinishedGamesSuccess)
+    .catch(gameUi.onGetFinishedGamesFailure)
+}
 module.exports = {
   click, // export to index.js
-  boardReset, // export to index.js
-  onGetGames,
   onNewGame,
-  onGetGame
+  onGetGame,
+  onGetGames,
+  onGetFinishedGames
 }

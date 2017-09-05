@@ -1,26 +1,30 @@
 'use strict'
 
 const store = require('../store')
-const gameEvents = require('./events')
+const boardReset = require('./board-reset')
 
 const onGetGamesSuccess = function (data) {
-  console.log('You got your games bro!')
-  console.log(data.games.length)
   $('#stats-total').text(data.games.length)
-  $('#message').show().text('You got your games bro!').fadeOut(5000)
-  $('.gameboard').on('click', gameEvents.click)
 }
 
 const onGetGamesFailure = function () {
-  console.log('Did not get your games bro!')
   $('#message').show().text('Did not get your games bro!').fadeOut(5000)
+}
+
+const onGetFinishedGamesSuccess = function (data) {
+  $('#stats-over').text(data.games.length)
+}
+
+const onGetFinishedGamesFailure = function (data) {
+  $('#message').show().text('Did not get those games bro!').fadeOut(5000)
 }
 
 const onNewGameSuccess = function (data) {
   console.log('new game success ran')
   store.game = data.game
+  boardReset.boardReset() // doesn't like this!
   $('#message').show().text('Made a new game bro! ID: ' + data.game.id)
-  $('.gameboard').on('click', gameEvents.click)
+  // $('.gameboard').on('click', gameEvents.click)
 }
 
 const onNewGameFailure = function (error) {
@@ -30,7 +34,7 @@ const onNewGameFailure = function (error) {
 }
 
 const onGetGameSuccess = function (data) {
-  $('.gameboard').on('click', gameEvents.click)
+  // $('.gameboard').on('click', gameEvents.click)
   store.game = data.game
   store.gameArray = data.game
   for (let i = 0; i < store.game.cells.length; i++) {
@@ -41,6 +45,7 @@ const onGetGameSuccess = function (data) {
   })
   store.clickCounter = clicks.length
   console.log('click counter is at: ' + store.clickCounter)
+  boardReset.boardOn()
   $('#message').show().text('Retrieved a game bro!').fadeOut(5000)
 }
 
@@ -66,6 +71,8 @@ const onUpdateGameFailure = function (error) {
 module.exports = {
   onGetGamesSuccess,
   onGetGamesFailure,
+  onGetFinishedGamesSuccess,
+  onGetFinishedGamesFailure,
   onNewGameSuccess,
   onNewGameFailure,
   onGetGameSuccess,

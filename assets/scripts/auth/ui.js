@@ -1,20 +1,14 @@
 'use strict'
 
 const store = require('../store')
-const gameEvents = require('../game/events')
 const gameApi = require('../game/api')
 const gameUi = require('../game/ui')
+const boardReset = require('../game/board-reset')
 
 const onSignUpSuccess = function (data) {
-  console.log(data)
-  console.log('You successfully signed up bro!')
   store.user = data.user
   $('#message').show().text('You\'re signed up bro! Now sign in!').fadeOut(7500)
   $('#sign-up-box').addClass('hidden')
-  // $('main').removeClass('hidden')
-  // $('header').removeClass('hidden')
-  // $('nav').removeClass('hidden')
-  // $('#landing').addClass('hidden')
 }
 
 const onSignUpFailure = function (error) {
@@ -33,10 +27,14 @@ const onSignInSuccess = function (data) {
   $('nav').removeClass('hidden')
   $('#landing').addClass('hidden')
 
-  // show the statistics
+  // show all games played statistics
   gameApi.getGames()
     .then(gameUi.onGetGamesSuccess)
     .catch(gameUi.onGetGamesFailure)
+  // show all finished games statistics
+  gameApi.getFinishedGames()
+    .then(gameUi.onGetFinishedGamesSuccess)
+    .catch(gameUi.onGetFinishedGamesFailure)
 }
 
 const onSignInFailure = function (error) {
@@ -57,7 +55,8 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = function () {
   console.log('Signed out bro!')
-  gameEvents.boardReset()
+  boardReset.boardReset()
+  store.board = 'off'
   $('#message').show().text('Signed out bro!').fadeOut(5000)
   $('main').addClass('hidden')
   $('header').addClass('hidden')
