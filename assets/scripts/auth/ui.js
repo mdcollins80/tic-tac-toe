@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const gameEvents = require('../game/events')
 
 const onSignUpSuccess = function (data) {
   console.log(data)
@@ -29,12 +30,13 @@ const onSignInSuccess = function (data) {
 
 const onSignInFailure = function (error) {
   console.log(error)
-  $('#message').show().text('There was a problem signing in!').fadeOut(5000)
+  $('#message').show().text('Got problems signing in bro!').fadeOut(5000)
 }
 
 const onChangePasswordSuccess = function () {
   console.log('Changed your password!')
-  $('#message').show().text('Changed your password!').fadeOut(5000)
+  $('#user-change-pw').addClass('hidden')
+  $('#message').show().text('Changed your password bro!').fadeOut(5000)
 }
 
 const onChangePasswordFailure = function () {
@@ -44,6 +46,7 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = function () {
   console.log('Signed out bro!')
+  gameEvents.boardReset()
   $('#message').show().text('Signed out bro!').fadeOut(5000)
   $('main').addClass('hidden')
   $('header').addClass('hidden')

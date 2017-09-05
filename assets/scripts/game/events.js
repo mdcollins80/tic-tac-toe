@@ -33,8 +33,8 @@ const click = function (event) {
     .catch(gameUi.onUpdateGameFailure)
 }
 
-const boardReset = function (event) {
-  event.preventDefault()
+const boardReset = function () {
+  // event.preventDefault()
   for (let i = 0; i < store.gameArray.length; i++) {
     store.gameArray[i] = null
   }

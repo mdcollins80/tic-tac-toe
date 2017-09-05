@@ -11,6 +11,10 @@ $(() => {
   $('.reset').on('click', gameEvents.boardReset)
   $('#user-sign-up').on('submit', authEvents.onSignUp)
   $('#user-sign-in').on('submit', authEvents.onSignIn)
+  $('#change-pw').on('click', function (event) {
+    console.log('password change clicked')
+    $('#user-change-pw').removeClass('hidden')
+  })
   $('#user-change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-btn').on('click', authEvents.onSignOut)
   // Game API Event Listeners

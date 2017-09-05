@@ -32,6 +32,18 @@
           <div class="col-3 box" id="sign-out-btn">
             <button type="button" class="btn btn-primary">Sign Out</button>
           </div>
+          <div class="col-3 box" id="change-pw">
+            <button type="button" class="btn btn-primary">Manage Password</button>
+          </div>
+          <div class="col-3 box hidden" id="user-change-pw">
+            <form class="credentials" id="user-change-password">
+                <input type="password" name="passwords[old]" id="password-old-change" placeholder="Old Password">
+                <input type="password" name="passwords[new]" id="password-new-change" placeholder="New Password">
+                <input type="password" name="passwords[newConfirm]" id="password-new-confirm" placeholder="Confirm New Password">
+                <button type="submit" class="btn btn-primary">Change PW</button>
+            </form>
+          </div>
+
         </div>
       </nav>
 
@@ -76,23 +88,23 @@
       <main class="hidden">
         <div class="container gameboard-all">
           <div class="gameboard-row">
-            <div class="col-xs-4 box gameboard" id=0>0</div>
-            <div class="col-xs-4 box gameboard" id=1>1</div>
-            <div class="col-xs-4 box gameboard" id=2>2</div>
+            <div class="col-xs-4 box gameboard" id=0>t</div>
+            <div class="col-xs-4 box gameboard" id=1>i</div>
+            <div class="col-xs-4 box gameboard" id=2>c</div>
           </div>
           <div class="gameboard-row">
-            <div class="col-xs-4 box gameboard" id=3>3</div>
-            <div class="col-xs-4 box gameboard" id=4>4</div>
-            <div class="col-xs-4 box gameboard" id=5>5</div>
+            <div class="col-xs-4 box gameboard" id=3>t</div>
+            <div class="col-xs-4 box gameboard" id=4>a</div>
+            <div class="col-xs-4 box gameboard" id=5>c</div>
           </div>
           <div class="gameboard-row">
-            <div class="col-xs-4 box gameboard" id=6>6</div>
-            <div class="col-xs-4 box gameboard" id=7>7</div>
-            <div class="col-xs-4 box gameboard" id=8>8</div>
+            <div class="col-xs-4 box gameboard" id=6>b</div>
+            <div class="col-xs-4 box gameboard" id=7>r</div>
+            <div class="col-xs-4 box gameboard" id=8>o</div>
           </div>
         </div>
 
-        <p>Here is some text about Tic Tac Toe.</p>
+        <p>Hey Bro!  You like Tic Tac Toe?  Right on!</p>
       </main>
     </body>
 </html>
