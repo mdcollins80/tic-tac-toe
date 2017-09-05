@@ -11,16 +11,12 @@ const onSignUpSuccess = function (data) {
   $('#sign-up-box').addClass('hidden')
 }
 
-const onSignUpFailure = function (error) {
-  console.log(error)
+const onSignUpFailure = function () {
   $('#message').show().text('Sign-up problems bro!').fadeOut(5000)
 }
 
 const onSignInSuccess = function (data) {
   store.user = data.user
-  console.log('next line is data.user:')
-  console.log(data.user)
-  console.log(store.user)
   $('#message').text('Nice sign-in bro!').fadeOut(5000)
   $('main').removeClass('hidden')
   $('header').removeClass('hidden')
@@ -37,24 +33,20 @@ const onSignInSuccess = function (data) {
     .catch(gameUi.onGetFinishedGamesFailure)
 }
 
-const onSignInFailure = function (error) {
-  console.log(error)
+const onSignInFailure = function () {
   $('#message').show().text('Got problems signing in bro!').fadeOut(5000)
 }
 
 const onChangePasswordSuccess = function () {
-  console.log('Changed your password!')
   $('#user-change-pw').addClass('hidden')
   $('#message').show().text('Changed your password bro!').fadeOut(5000)
 }
 
 const onChangePasswordFailure = function () {
-  console.log('Problems changing your password bro!')
   $('#message').show().text('Problems changing your password bro!').fadeOut(5000)
 }
 
 const onSignOutSuccess = function () {
-  console.log('Signed out bro!')
   boardReset.boardReset()
   store.board = 'off'
   $('#message').show().text('Signed out bro!').fadeOut(5000)
@@ -66,7 +58,6 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutFailure = function () {
-  console.log('Failed to sign out bro!')
   $('#message').show().text('Failed to sign out bro!').fadeOut(5000)
 }
 module.exports = {

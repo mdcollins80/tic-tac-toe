@@ -36,7 +36,7 @@ const onNewGameFailure = function (error) {
 const onGetGameSuccess = function (data) {
   // $('.gameboard').on('click', gameEvents.click)
   store.game = data.game
-  store.gameArray = data.game
+  store.gameArray = data.game.cells
   for (let i = 0; i < store.game.cells.length; i++) {
     $('#' + i).text(store.game.cells[i])
   }

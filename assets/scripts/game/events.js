@@ -11,27 +11,32 @@ const click = function (event) {
     event.preventDefault()
     const move = $(this).attr('id')
     // updates gameArray with X or O depending on turn
-    gamelogic.playerMove(move)
-    // checks turn, inserts X or O accordingly
-    const turn = () => store.turn() === 1 ? 'X' : 'O'
-    $(this).text(turn)
-    console.log(store.gameArray)
-    // check for winner
-    const over = gamelogic.checkWinner(store.gameArray)
-    // send data to the updateGame API call
-    const data = {
-      game: {
-        cell: {
-          index: move,
-          value: turn()
-        },
-        over: over
+    // gamelogic.playerMove(move)
+    if (store.game.cells[move] !== '') {
+      $('#message').show().text('That square\'s already been picked bro!').fadeOut(5000)
+    } else {
+      store.clickCounter += 1
+      // checks turn, inserts X or O accordingly
+      const turn = () => store.turn() === 1 ? 'X' : 'O'
+      $(this).text(turn)
+      store.gameArray[move] = turn()
+      // check for winner
+      const over = gamelogic.checkWinner(store.gameArray)
+      // send data to the updateGame API call
+      const data = {
+        game: {
+          cell: {
+            index: move,
+            value: turn()
+          },
+          over: over
+        }
       }
+      gameApi.updateGame(JSON.stringify(data))
+        .then(gameUi.onUpdateGameSuccess)
+        .catch(gameUi.onUpdateGameFailure)
     }
-    gameApi.updateGame(JSON.stringify(data))
-      .then(gameUi.onUpdateGameSuccess)
-      .catch(gameUi.onUpdateGameFailure)
-  } console.log(store.clickCounter)
+  }
 }
 
 const onNewGame = function (event) {

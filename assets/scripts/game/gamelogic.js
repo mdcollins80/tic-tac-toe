@@ -3,40 +3,40 @@
 const store = require('../store')
 
 const playerMove = function (index) {
-  if (store.gameArray[index] !== null) {
+  if (store.game.cells[index] !== null) {
     console.log('Box already used!')
   } else {
     store.clickCounter += 1
-    if (store.turn() === 1) {
-      store.gameArray[index] = 'x'
-      // return store.gameArray // for passing to the GameAPI later?
-    } else {
-      store.gameArray[index] = 'o'
-      // return store.gameArray // for passing to the GameAPI later?
-    }
+    // if (store.turn() === 1) {
+    //   store.gameArray[index] = 'x'
+    //   // return store.gameArray // for passing to the GameAPI later?
+    // } else {
+    //   store.gameArray[index] = 'o'
+    //   // return store.gameArray // for passing to the GameAPI later?
+    // }
   }
 }
 
 const checkWinner = function (gameArray) {
-  if ((gameArray[0] === 'x' && gameArray[1] === 'x' && gameArray[2] === 'x') ||
-  (gameArray[3] === 'x' && gameArray[4] === 'x' && gameArray[5] === 'x') ||
-  (gameArray[6] === 'x' && gameArray[7] === 'x' && gameArray[8] === 'x') ||
-  (gameArray[0] === 'x' && gameArray[3] === 'x' && gameArray[6] === 'x') ||
-  (gameArray[1] === 'x' && gameArray[4] === 'x' && gameArray[7] === 'x') ||
-  (gameArray[2] === 'x' && gameArray[5] === 'x' && gameArray[8] === 'x') ||
-  (gameArray[0] === 'x' && gameArray[4] === 'x' && gameArray[8] === 'x') ||
-  (gameArray[2] === 'x' && gameArray[4] === 'x' && gameArray[6] === 'x')) {
+  if ((gameArray[0] === 'X' && gameArray[1] === 'X' && gameArray[2] === 'X') ||
+  (gameArray[3] === 'X' && gameArray[4] === 'X' && gameArray[5] === 'X') ||
+  (gameArray[6] === 'X' && gameArray[7] === 'X' && gameArray[8] === 'X') ||
+  (gameArray[0] === 'X' && gameArray[3] === 'X' && gameArray[6] === 'X') ||
+  (gameArray[1] === 'X' && gameArray[4] === 'X' && gameArray[7] === 'X') ||
+  (gameArray[2] === 'X' && gameArray[5] === 'X' && gameArray[8] === 'X') ||
+  (gameArray[0] === 'X' && gameArray[4] === 'X' && gameArray[8] === 'X') ||
+  (gameArray[2] === 'X' && gameArray[4] === 'X' && gameArray[6] === 'X')) {
     store.board = 'off'
-    $('#message').show().text('X wins the game bro!').fadeOut(10000)
+    $('#message').show().text('X wins the game bro!').fadeOut(5000)
     return true
-  } else if ((gameArray[0] === 'o' && gameArray[1] === 'o' && gameArray[2] === 'o') ||
-  (gameArray[3] === 'o' && gameArray[4] === 'o' && gameArray[5] === 'o') ||
-  (gameArray[6] === 'o' && gameArray[7] === 'o' && gameArray[8] === 'o') ||
-  (gameArray[0] === 'o' && gameArray[3] === 'o' && gameArray[6] === 'o') ||
-  (gameArray[1] === 'o' && gameArray[4] === 'o' && gameArray[7] === 'o') ||
-  (gameArray[2] === 'o' && gameArray[5] === 'o' && gameArray[8] === 'o') ||
-  (gameArray[0] === 'o' && gameArray[4] === 'o' && gameArray[8] === 'o') ||
-  (gameArray[2] === 'o' && gameArray[4] === 'o' && gameArray[6] === 'o')) {
+  } else if ((gameArray[0] === 'O' && gameArray[1] === 'O' && gameArray[2] === 'O') ||
+  (gameArray[3] === 'O' && gameArray[4] === 'O' && gameArray[5] === 'O') ||
+  (gameArray[6] === 'O' && gameArray[7] === 'O' && gameArray[8] === 'O') ||
+  (gameArray[0] === 'O' && gameArray[3] === 'O' && gameArray[6] === 'O') ||
+  (gameArray[1] === 'O' && gameArray[4] === 'O' && gameArray[7] === 'O') ||
+  (gameArray[2] === 'O' && gameArray[5] === 'O' && gameArray[8] === 'O') ||
+  (gameArray[0] === 'O' && gameArray[4] === 'O' && gameArray[8] === 'O') ||
+  (gameArray[2] === 'O' && gameArray[4] === 'O' && gameArray[6] === 'O')) {
     store.board = 'off'
     $('#message').show().text('O wins the game bro!').fadeOut(10000)
     return true

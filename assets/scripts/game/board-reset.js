@@ -12,7 +12,9 @@ const boardReset = function () {
 }
 
 const boardOn = function () {
-  store.board = 'on'
+  if (store.game.over === false) {
+    store.board = 'on'
+  }
 }
 
 module.exports = {
