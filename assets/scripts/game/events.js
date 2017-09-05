@@ -8,7 +8,6 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const click = function (event) {
   event.preventDefault()
-  // get the id of the square that was clicked for updating the array
   const move = $(this).attr('id')
   // updates gameArray with X or O depending on turn
   gamelogic.playerMove(move)

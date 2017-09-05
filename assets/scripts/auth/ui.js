@@ -7,9 +7,12 @@ const onSignUpSuccess = function (data) {
   console.log(data)
   console.log('You successfully signed up bro!')
   store.user = data.user
-  $('#message').show().text('You\'re signed up and signed in bro!').fadeOut(5000)
-  $('main').removeClass('hidden')
-  $('#landing').addClass('hidden')
+  $('#message').show().text('You\'re signed up bro! Now sign in!').fadeOut(7500)
+  $('#sign-up-box').addClass('hidden')
+  // $('main').removeClass('hidden')
+  // $('header').removeClass('hidden')
+  // $('nav').removeClass('hidden')
+  // $('#landing').addClass('hidden')
 }
 
 const onSignUpFailure = function (error) {
@@ -21,11 +24,13 @@ const onSignInSuccess = function (data) {
   console.log('You successfully signed in!')
   store.user = data.user
   console.log(store.user)
+  console.log(store)
   $('#message').text('Nice sign-in bro!').fadeOut(5000)
   $('main').removeClass('hidden')
   $('header').removeClass('hidden')
   $('nav').removeClass('hidden')
   $('#landing').addClass('hidden')
+  $('.gameboard').off()
 }
 
 const onSignInFailure = function (error) {
@@ -52,6 +57,7 @@ const onSignOutSuccess = function () {
   $('header').addClass('hidden')
   $('nav').addClass('hidden')
   $('#landing').removeClass('hidden')
+  $('#sign-up-box').removeClass('hidden')
 }
 
 const onSignOutFailure = function () {

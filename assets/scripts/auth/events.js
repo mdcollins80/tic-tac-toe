@@ -12,7 +12,6 @@ const onSignUp = function (event) {
 
   if (user.email.length !== 0) {
     if (user.password === user.password_confirmation) {
-      console.log('sign up data is good')
       userApi.signUp(data)
         .then(userUi.onSignUpSuccess)
         .catch(userUi.onSignUpFailure)
@@ -20,10 +19,10 @@ const onSignUp = function (event) {
       //   .then(userUi.onSignInSuccess)
       //   .catch(userUi.onSignInFailure)
     } else {
-      $('#message').text('Passwords don\'t match bro!')
+      $('#message').show().text('Passwords don\'t match bro!').fadeOut(5000)
     }
   } else {
-    $('#message').text('Enter an email bro!')
+    $('#message').show().text('Enter an email bro!').fadeOut(5000)
   }
 }
 
@@ -45,7 +44,7 @@ const onChangePassword = function (event) {
       .then(userUi.onChangePasswordSuccess)
       .catch(userUi.onChangePasswordFailure)
   } else {
-    console.log('New Passwords don\'t match!')
+    $('#message').show().text('Passwords don\'t match bro!').fadeOut(5000)
   }
 }
 

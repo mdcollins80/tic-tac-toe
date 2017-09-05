@@ -6,6 +6,7 @@ const onGetGamesSuccess = function (data) {
   console.log('You got your games bro!')
   console.log(data)
   $('#message').show().text('You got your games bro!').fadeOut(5000)
+  $('.gameboard').on()
 }
 
 const onGetGamesFailure = function () {
@@ -30,6 +31,7 @@ const onGetGameSuccess = function (data) {
   console.log(data)
   store.game = data.game
   store.gameArray = data.game
+  for (let i = 0; i < )
   console.log(store.game)
   $('#message').show().text('Retrieved a game bro!').fadeOut(5000)
   $('.gameboard').on()
