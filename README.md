@@ -20,3 +20,18 @@ Improve UI.  Smaller menu items for more conducive mobile experience.
 Highlight winning combo.
 Whose turn posted on Get Game.
 Change font.
+
+
+User Stories:
+As a user, when I sign up, I can sign in.
+As a user, when I sign in, I can see the game.
+As a user, when I click new game, I can play the game.
+As a user, when the game is over, I can play again.
+As a user, if I want to play an unfinished game, I can bring it back up.
+As a user, if I'm playing an unfinished game, I can start where we left off.
+As a user, when I click manage passwords, a change password menu shows up.
+As a user, when I sign out, the login page appears.
+As a user, when I sign out, the gameboard resets.
+
+Wireframes:
+[Imgur](https://i.imgur.com/BGnYQtJ.jpg)
