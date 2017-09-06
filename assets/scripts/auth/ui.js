@@ -9,6 +9,7 @@ const onSignUpSuccess = function (data) {
   store.user = data.user
   $('#message').show().text('You\'re signed up bro! Now sign in!').fadeOut(7500)
   $('#sign-up-box').addClass('hidden')
+  $('.sign-up-input').val('')
 }
 
 const onSignUpFailure = function () {
@@ -22,6 +23,7 @@ const onSignInSuccess = function (data) {
   $('header').removeClass('hidden')
   $('nav').removeClass('hidden')
   $('#landing').addClass('hidden')
+  $('.sign-in-input').val('')
 
   // show all games played statistics
   gameApi.getGames()
@@ -40,6 +42,7 @@ const onSignInFailure = function () {
 const onChangePasswordSuccess = function () {
   $('#user-change-pw').addClass('hidden')
   $('#message').show().text('Changed your password bro!').fadeOut(5000)
+  $('.change-pw-input').val('')
 }
 
 const onChangePasswordFailure = function () {
@@ -55,6 +58,7 @@ const onSignOutSuccess = function () {
   $('nav').addClass('hidden')
   $('#landing').removeClass('hidden')
   $('#sign-up-box').removeClass('hidden')
+  $('#user-change-pw').addClass('hidden')
 }
 
 const onSignOutFailure = function () {
