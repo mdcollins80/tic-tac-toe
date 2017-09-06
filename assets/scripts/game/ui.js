@@ -43,6 +43,7 @@ const onGetGameSuccess = function (data) {
   store.clickCounter = clicks.length
   boardReset.boardOn()
   $('#message').show().text('Retrieved a game bro!').fadeOut(5000)
+  $('.get-game-input').val('')
 }
 
 const onGetGameFailure = function () {

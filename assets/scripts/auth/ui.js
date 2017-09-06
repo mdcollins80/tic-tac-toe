@@ -24,6 +24,15 @@ const onSignInSuccess = function (data) {
   $('nav').removeClass('hidden')
   $('#landing').addClass('hidden')
   $('.sign-in-input').val('')
+  $('#0').text('t')
+  $('#1').text('i')
+  $('#2').text('c')
+  $('#3').text('t')
+  $('#4').text('a')
+  $('#5').text('c')
+  $('#6').text('b')
+  $('#7').text('r')
+  $('#8').text('o')
 
   // show all games played statistics
   gameApi.getGames()
