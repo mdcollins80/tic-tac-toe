@@ -2,7 +2,9 @@
 
 Tic-Tac-Toe Project!!
 
-This labor of love was made possible by Javascript, HTML, and CSS.
+https://mdcollins80.github.io/tic-tac-toe/
+
+This labor of "love" was made possible by Javascript, HTML, and CSS.
 
 I created a custom game engine to handle the game play.  An empty game array is created, and on clicking on the gameboard, a click counter is used to determine whose turn it is based on odd or even click counters (odd is x's turn, even is o's)  The game array is updated based on the id of the gameboard div that was clicked.  This info is also used to update the api for that game.
 
