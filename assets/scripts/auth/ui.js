@@ -17,7 +17,7 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (data) {
   store.user = data.user
-  $('#message').text('Nice sign-in bro!').fadeOut(5000)
+  $('#message').show().text('Nice sign-in bro!').fadeOut(5000)
   $('main').removeClass('hidden')
   $('header').removeClass('hidden')
   $('nav').removeClass('hidden')

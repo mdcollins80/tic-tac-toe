@@ -2,20 +2,19 @@
 
 const store = require('../store')
 
-const playerMove = function (index) {
-  if (store.game.cells[index] !== null) {
-    console.log('Box already used!')
-  } else {
-    store.clickCounter += 1
-    // if (store.turn() === 1) {
-    //   store.gameArray[index] = 'x'
-    //   // return store.gameArray // for passing to the GameAPI later?
-    // } else {
-    //   store.gameArray[index] = 'o'
-    //   // return store.gameArray // for passing to the GameAPI later?
-    // }
-  }
-}
+// const playerMove = function (index) {
+//   if (store.game.cells[index] !== null) {
+//   } else {
+//     store.clickCounter += 1
+//     if (store.turn() === 1) {
+//       store.gameArray[index] = 'x'
+//       // return store.gameArray // for passing to the GameAPI later?
+//     } else {
+//       store.gameArray[index] = 'o'
+//       // return store.gameArray // for passing to the GameAPI later?
+//     }
+//   }
+// }
 
 const checkWinner = function (gameArray) {
   if ((gameArray[0] === 'X' && gameArray[1] === 'X' && gameArray[2] === 'X') ||
@@ -50,6 +49,6 @@ const checkWinner = function (gameArray) {
 }
 
 module.exports = {
-  playerMove,
+//  playerMove,
   checkWinner
 }

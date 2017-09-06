@@ -8,7 +8,6 @@ const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const user = data.credentials
-  console.log(data.credentials)
 
   if (user.email.length !== 0) {
     if (user.password === user.password_confirmation) {
