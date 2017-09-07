@@ -2,27 +2,34 @@
 
 const store = require('../store')
 const boardReset = require('./board-reset')
+const gameApi = require('./api')
 
 const onGetGamesSuccess = function (data) {
   $('#stats-total').text(data.games.length)
 }
 
 const onGetGamesFailure = function () {
-  $('#message').show().text('Did not get your games bro!').fadeOut(5000)
+  $('#message-2').show().text('Error in your game count bro!').fadeOut(5000)
 }
 
 const onGetFinishedGamesSuccess = function (data) {
   $('#stats-over').text(data.games.length)
 }
 
-const onGetFinishedGamesFailure = function (data) {
-  $('#message').show().text('Did not get those games bro!').fadeOut(5000)
+const onGetFinishedGamesFailure = function () {
+  $('#message-2').show().text('Error in your finished game count bro!').fadeOut(5000)
 }
 
 const onNewGameSuccess = function (data) {
   store.game = data.game
   boardReset.boardReset() // doesn't like this!
   $('#message').show().text('Made a new game bro! ID: ' + data.game.id)
+  gameApi.getGames()
+    .then(onGetGamesSuccess)
+    .catch(onGetGamesFailure)
+  gameApi.getFinishedGames()
+    .then(onGetFinishedGamesSuccess)
+    .catch(onGetFinishedGamesFailure)
   // $('.gameboard').on('click', gameEvents.click)
 }
 
