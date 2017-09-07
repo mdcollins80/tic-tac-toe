@@ -22,7 +22,7 @@ const onGetFinishedGamesFailure = function () {
 
 const onNewGameSuccess = function (data) {
   store.game = data.game
-  boardReset.boardReset() // doesn't like this!
+  boardReset.boardReset()
   $('#message').show().text('Made a new game bro! ID: ' + data.game.id)
   gameApi.getGames()
     .then(onGetGamesSuccess)
@@ -30,7 +30,6 @@ const onNewGameSuccess = function (data) {
   gameApi.getFinishedGames()
     .then(onGetFinishedGamesSuccess)
     .catch(onGetFinishedGamesFailure)
-  // $('.gameboard').on('click', gameEvents.click)
 }
 
 const onNewGameFailure = function () {
