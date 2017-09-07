@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe Project</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid">
+      <header class="hidden">
+        <h1>TIC-TAC-BRO!</h1>
+      </header>
+      <nav class="container-fluid hidden">
+        <div class="row">
+          <div class="col-3 box" id="new-game-btn">
+            <button type="button" class="btn btn-primary">New Game</button>
+          </div>
+          <div class="col-3 box">
+            <form id="get-game-btn">
+              <button type="submit" class="btn btn-primary">Get Game</button>
+              <input class="get-game-input" type="text" name="game[id]" placeholder="Game ID">
+            </form>
+          </div>
+          <!-- Couldn't get this feature to work correctly -->
+          <!-- <div class="col-3 box" id="join-game-btn">
+            <button type="button" class="btn btn-primary">Join Game</button>
+          </div>
+          <div class="col-3 box hidden" id="join-game">
+            <form class="credentials" id="join-game-credentials">
+                <input type="password" name="passwords[old]" id="password-old-change" placeholder="Old Password">
+                <input type="password" name="passwords[new]" id="password-new-change" placeholder="New Password">
+                <input type="password" name="passwords[newConfirm]" id="password-new-confirm" placeholder="Confirm New Password">
+                <button type="submit" class="btn btn-primary">Change PW</button>
+            </form>
+          </div> -->
+          <div class="col-3 box" id="sign-out-btn">
+            <button type="button" class="btn btn-primary">Sign Out</button>
+          </div>
+          <div class="col-3 box" id="change-pw">
+            <button type="button" class="btn btn-primary">Manage Password</button>
+          </div>
+          <div class="col-3 box hidden" id="user-change-pw">
+            <form class="credentials" id="user-change-password">
+                <input class="change-pw-input" type="password" name="passwords[old]" id="password-old-change" placeholder="Old Password">
+                <input class="change-pw-input" type="password" name="passwords[new]" id="password-new-change" placeholder="New Password">
+                <input class="change-pw-input" type="password" name="passwords[newConfirm]" id="password-new-confirm" placeholder="Confirm New Password">
+                <button type="submit" class="btn btn-primary">Change PW</button>
+            </form>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- This is the message bar -->
+      <div class="message-bar box" id="message-bar">
+        <span id="message"></span>
+      </div>
+      <!-- This is the sign-up and sign-in section -->
+      <div class="container credentials-all" id="landing">
+        <div class="logo">
+          <h1 class="display-3">TIC-TAC-BRO!</h1>
+        </div>
+        <div class="landing box" id="sign-up-box">
+          <form class="credentials" id="user-sign-up">
+              <input class="sign-up-input" type="text" name="credentials[email]" id="user-email-sign-up" placeholder="Email">
+              <input class="sign-up-input" type="password" name="credentials[password]" id="user-password-sign-up" placeholder="Password">
+              <input class="sign-up-input" type="password" name="credentials[password_confirmation]" id="user-password-conf-sign-up" placeholder="Password Confirm">
+              <button type="submit" class="btn btn-default">Sign Up</button>
+          </form>
+        </div>
+
+        <div class="landing box">
+          <form class="credentials" id="user-sign-in">
+              <input class="sign-in-input" type="text" name="credentials[email]" id="user-email-sign-in" placeholder="Email">
+              <input class="sign-in-input" type="password" name="credentials[password]" id="user-password-sign-in" placeholder="Password">
+              <button type="submit" class="btn btn-default">Sign In</button>
+          </form>
+        </div>
+      </div>
+
+      <main class="hidden">
+        <div class="container gameboard-all">
+          <div class="gameboard-row">
+            <div class="col-xs-4 box gameboard" id=0>t</div>
+            <div class="col-xs-4 box gameboard" id=1>i</div>
+            <div class="col-xs-4 box gameboard" id=2>c</div>
+          </div>
+          <div class="gameboard-row">
+            <div class="col-xs-4 box gameboard" id=3>t</div>
+            <div class="col-xs-4 box gameboard" id=4>a</div>
+            <div class="col-xs-4 box gameboard" id=5>c</div>
+          </div>
+          <div class="gameboard-row">
+            <div class="col-xs-4 box gameboard" id=6>b</div>
+            <div class="col-xs-4 box gameboard" id=7>r</div>
+            <div class="col-xs-4 box gameboard" id=8>o</div>
+          </div>
+        </div>
+
+        <p class="main-footer">Hey Bro!  You like Tic Tac Toe?  Right on!</p>
+        <div class="stats-div">
+          <p> You've played a total of <span id="stats-total">BLAH</span> game(s) bro! </p>
+          <p> You've finished a total of <span id="stats-over">BLAH</span> game(s) bro!</p>
+          <p id="message-2"></p>
+        </div>
+      </main>
+    </body>
+</html>
